@@ -1,6 +1,6 @@
 # corecrypto for windows
-  corecryto from [corecrypto](https://github.com/samdmarshall/apple-corecrypto)
-  apple's corecrypto is very powerful,and not directly open source. according to apple's words, they said  Although corecrypto   does not directly provide programming interfaces for developers. no API, any source ? It's very very like opensl/fips.
+    corecryto from [corecrypto](https://github.com/samdmarshall/apple-corecrypto)
+    apple's corecrypto is very powerful,and not directly open source. according to apple's words, they said Although corecrypto   does not directly provide programming interfaces for developers. no API, any source ? It's very very like opensl/fips.
   
 # Diff
 ##  1. remove OS X gcd function calls like
@@ -11,11 +11,11 @@
 ## 2. fast AES
     I only complied the pure c AES.
 ## 3. cccurve25519 or cced25519
-  Apple's UserMode corecrypto uses cced25519 libs, cccurve25519 for KernelMode. I've never get the definition of cccurve25519 privatekey.
+    Apple's UserMode corecrypto uses cced25519 libs, cccurve25519 for KernelMode. I've never get the definition of cccurve25519 privatekey.
 ## 4. Apple SEPRom
-  Apple SEP ROM is a hardware Embedded On your iPhone. It provides ecdsa, aes ...  this project closed it.
+    Apple SEP ROM is a hardware Embedded On your iPhone. It provides ecdsa, aes ...  this project closed it.
 ## 5. cc_config.h
-  Checking your config for yourself.
+    Checking your config for yourself.
   
   
  
