@@ -1,6 +1,5 @@
-# win_corecrypto
-  corecrypto for windows
-  corecryto from git@github.com:samdmarshall/apple-corecrypto.git
+# corecrypto for windows
+  corecryto from [git@github.com:samdmarshall/apple-corecrypto.git]
   apple's corecrypto is very powerful,and not directly open source. according to apple's words, they said  Although corecrypto   does not directly provide programming interfaces for developers. no API, any source ? It's very very like opensl/fips.
   
 # Diff
