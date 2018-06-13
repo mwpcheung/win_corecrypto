@@ -7,7 +7,7 @@
 ##  1. remove OS X gcd function calls like
     1.dispatch_async(get_queue_main()^(){...});
     2.dispatch_once(...);
-    I don't know the how the Apple's gcd function works. On windows Environment, u'd better use winmmi API waking up your callbacks. and injecting your code to another thread is more hard. MicroSoft never provide APC programming in UserMode. May be hooking windows ntdll sysenter and call your callback functions. ohter
+    I don't know how the Apple's gcd function works. On windows Environment, u'd better use winmmi API waking up your callbacks. and injecting your code to another thread is more hard. MicroSoft never provide APC programming in UserMode. May be hooking windows ntdll sysenter and call your callback functions. ohter
     wise fucking the Windows iTunes is the best way
 ## 2. fast AES
     I only complied the pure c AES.
