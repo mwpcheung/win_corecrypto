@@ -23,13 +23,17 @@
 ## 6. take care of cc_xxx_ctx_t
     it's difficult to understanding Apple's code style.  for example when you want to malloc a cc_digest_ctx_t, 
     Apple's macro  ccdigest_ctx_decl ccdigest_ctx_size ccdigest_di_size is very useful for you.
-    and force convert the allocated address to cc_digest_ctx_t, not a context pointer.
-    '''
-        struct ccdigest_info* destInfo = ccsha1_di();
-		ccdigest_ctx_t context = (ccdigest_ctx_t)(struct ccdigest_ctx*)malloc(ccdigest_ctx_size(destInfo->state_size, destInfo->block_size));
-		ccdigest_init(destInfo, context);
-				// do something
-    '''
+    and force convert the allocated address to cc_digest_ctx_t.
+   
+        struct ccdigest_info* digest_info = ccsha1_di();
+	ccdigest_ctx_t context = (ccdigest_ctx_t)(struct ccdigest_ctx*)
+		malloc(ccdigest_ctx_size(digest_info->state_size, digest_info->block_size));
+	ccdigest_init(destInfo, context);
+	// do something
+    	// how to free the memeory ?
+	// by save the allocated address at first and then free it. 
+	// or *(int*)&context where sizeof(int) equals to your system pointer size.
+	
  
 
 
