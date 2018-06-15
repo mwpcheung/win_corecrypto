@@ -26,9 +26,12 @@
     and force convert the allocated address to cc_digest_ctx_t.
    
         struct ccdigest_info* digest_info = ccsha1_di();
+	
 	ccdigest_ctx_t context = (ccdigest_ctx_t)(struct ccdigest_ctx*)
 		malloc(ccdigest_ctx_size(digest_info->state_size, digest_info->block_size));
+		
 	ccdigest_init(destInfo, context);
+	
 	// do something
     	// how to free the memeory ?
 	// by save the allocated address at first and then free it. 
