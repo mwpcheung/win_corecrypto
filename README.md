@@ -20,8 +20,23 @@
     Apple SEP ROM is a hardware Embedded On your iPhone. It provides ecdsa, aes ...  this project closed it.
 ## 5. cc_config.h
     Checking your config for yourself.
-  
-  
+## 6. take care of cc_xxx_ctx_t
+    it's difficult to understanding Apple's code style.  for example when you want to malloc a cc_digest_ctx_t, 
+    Apple's macro  ccdigest_ctx_decl ccdigest_ctx_size ccdigest_di_size is very useful for you.
+    and force convert the allocated address to cc_digest_ctx_t.
+   
+        struct ccdigest_info* digest_info = ccsha1_di();
+	
+	ccdigest_ctx_t context = (ccdigest_ctx_t)(struct ccdigest_ctx*)
+		malloc(ccdigest_ctx_size(digest_info->state_size, digest_info->block_size));
+		
+	ccdigest_init(destInfo, context);
+	
+	// do something
+    	// how to free the memeory ?
+	// by save the allocated address at first and then free it. 
+	// or *(int*)&context where sizeof(int) equals to your system pointer size.
+	
  
 
 
